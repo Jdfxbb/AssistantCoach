@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_coach_login"
@@ -9,8 +9,55 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:weigtSum="4"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.joshua.assistantcoach.CoachLoginActivity"
-    tools:showIn="@layout/activity_coach_login">
+    tools:showIn="@layout/activity_coach_login"
+    >
 
-</RelativeLayout>
+    <TextView
+        android:text="Assistant Coach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="36sp"
+        android:layout_weight="0"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/textView"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:text="Name"
+        android:id="@+id/email"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="email"
+        android:text="Name"
+        android:id="@+id/password"
+        android:layout_weight="1"
+        android:layout_marginBottom="20dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Sign In"
+        android:layout_weight="1"
+        />
+
+    <Button
+        android:text="Sign Up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button2"
+        android:layout_weight="1" />
+</LinearLayout>
