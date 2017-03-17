@@ -1,0 +1,33 @@
+/* Empty. Add your own CSS if you like */
+.container{
+    padding:5px;
+    padding-bottom:20px;
+    overflow:auto;
+}
+
+.rinput{
+    
+    border:1px groove;
+    margin-top:10px;
+    
+}
+
+.ViewHeading{
+    border-top:2px solid blue;
+    border-bottom:2px solid blue;
+    margin-bottom: 20px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.chatpanel{
+    height:250px;
+}
+
+.panelBtn{
+    display:block !important;
+    margin-left:auto;
+    margin-right:auto;
+    width:150px;
+    margin-top:25px;
+}
