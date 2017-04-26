@@ -1,0 +1,31 @@
+
+
+<ion-view class="container" ng-controller="CoachUpdate-controller">
+  <h2 class="ViewHeading" style="color:blue;">Update Info ( {{parentUserName}}</h2>
+
+  <div class="input-group rinput">
+    <span class="input-group-addon" id="fName">First Name</span>
+    <input type="text" class="form-control" ng-model="fname" placeholder="First Name" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group rinput">
+    <span class="input-group-addon" id="lName">Surname</span>
+    <input type="text" class="form-control"  ng-model="surname"  placeholder="Surname" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group rinput">
+    <span class="input-group-addon" id="password">Password</span>
+    <input type="password" class="form-control" ng-model="password"  placeholder="Password" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group rinput">
+    <span class="input-group-addon" id="email">Email</span>
+    <input type="text" class="form-control"  ng-model="email" placeholder="Email" aria-describedby="basic-addon1">
+  </div>
+
+  <div style="margin-top:20px; padding:5px; text-align:right;">
+    <button class="btn btn-primary" ng-click="submit()">Update</button>
+    <button class="btn btn-danger" ng-click="assignCoachMain()">Cancel</button>
+  </div>
+
+</ion-view>

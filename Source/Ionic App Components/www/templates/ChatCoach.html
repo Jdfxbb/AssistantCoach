@@ -1,7 +1,6 @@
 
-
 <ion-view class="container" ng-controller="chat-controller">
-<h2 class="ViewHeading" style="color:blue;">Team Chat</h2>
+<h2 class="ViewHeading" style="color:blue;">Team Chat ({{parentUserName}}</h2>
 
 <div id="parentDiv" ng-model="chatMessages" style="width: 100%; box-shadow: 0px 0px 4px 1px; overflow:auto;" class="panel panel-default chatpanel">
     <div class="panel-body" ng-repeat="message in chatMessages" >
@@ -15,6 +14,6 @@
 
     <div style="text-align:right;">
 <span><textarea style="width: 100%; box-shadow: 0px 0px 4px 1px;" class="span6" rows="3" placeholder="What's up?" required ng-model="message"></textarea></span><span>
-      <button style="margin-top: 10px;" class="btn btn-info" ng-click="send()">Send</button><button style="margin-top: 10px;" class="btn btn-danger" ng-click="assignPlayerMain()">Cancel</button></span>
+      <button style="margin-top: 10px;" class="btn btn-info" ng-click="send()">Send</button><button style="margin-top: 10px;" class="btn btn-danger" ng-click="assignCoachMain()">Cancel</button></span>
 </div>
 </ion-view>

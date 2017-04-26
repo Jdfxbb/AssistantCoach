@@ -1,0 +1,187 @@
+<ion-view class="container" ng-controller="Team-controller">
+  <h2 class="ViewHeading" style="color:blue;">Team</h2>
+
+  <canvas id="teamCanvas" width='250' height='250' style='background-image: url(img/bb.png);
+    background-repeat: no-repeat;'></canvas>
+  <br>
+  <button ng-click="assignCoachMain()" class="btn btn-primary">Back</button>
+  <br><br>
+  <h2>Fielding Lineup</h2>
+  <hr>
+
+  <div class='well'>
+    <p kParam="leftField" style="font-weight:bold">Left Field : {{leftField}} <select
+      selected="-1"
+      name="select"
+      class="form-control"
+      style="margin-top:10px;">
+      <option ng-repeat="x in availableArr" value="{{x.fname}}">{{x.fname}}</option>
+    </select>
+      <button ng-click="updateField($event)" style="margin-top:10px;" class="btn btn-primary">Update</button>
+    </p>
+  </div>
+
+  <br>
+
+  <div class='well'>
+    <p kParam="centerField" style="font-weight:bold">Center Field : {{centerField}} <select
+      selected="-1"
+      name="select"
+      class="form-control"
+      style="margin-top:10px;">
+      <option ng-repeat="x in availableArr" value="{{x.fname}}">{{x.fname}}</option>
+    </select>
+      <button ng-click="updateField($event)" style="margin-top:10px;" class="btn btn-primary">Update</button>
+    </p>
+  </div>
+
+  <br>
+
+  <div class='well'>
+    <p kParam="rightField" style="font-weight:bold">Right Field : {{rightField}} <select
+      selected="-1"
+      name="select"
+      class="form-control"
+      style="margin-top:10px;">
+      <option ng-repeat="x in availableArr" value="{{x.fname}}">{{x.fname}}</option>
+    </select>
+      <button ng-click="updateField($event)" style="margin-top:10px;" class="btn btn-primary">Update</button>
+    </p>
+  </div>
+
+  <br>
+  <div class='well'>
+    <p kParam="shortStop" style="font-weight:bold">Short Stop : {{shortStop}} <select
+      selected="-1"
+      name="select"
+      class="form-control"
+      style="margin-top:10px;">
+      <option ng-repeat="x in availableArr" value="{{x.fname}}">{{x.fname}}</option>
+    </select>
+      <button ng-click="updateField($event)" style="margin-top:10px;" class="btn btn-primary">Update</button>
+    </p>
+  </div>
+  <br>
+  <div class='well'>
+    <p kParam="secondBase" style="font-weight:bold">Second Base : {{secondBase}} <select
+      selected="-1"
+      name="select"
+      class="form-control"
+      style="margin-top:10px;">
+      <option ng-repeat="x in availableArr" value="{{x.fname}}">{{x.fname}}</option>
+    </select>
+      <button ng-click="updateField($event)" style="margin-top:10px;" class="btn btn-primary">Update</button>
+    </p>
+  </div>
+  <br>
+  <div class='well'>
+    <p kParam="thirdBase" style="font-weight:bold">Third Base : {{thirdBase}} <select
+      selected="-1"
+      name="select"
+      class="form-control"
+      style="margin-top:10px;">
+      <option ng-repeat="x in availableArr" value="{{x.fname}}">{{x.fname}}</option>
+    </select>
+      <button ng-click="updateField($event)" style="margin-top:10px;" class="btn btn-primary">Update</button>
+    </p>
+  </div>
+  <br>
+  <div class='well'>
+    <p kParam="pitcher" style="font-weight:bold">Pitcher : {{pitcher}} <select
+      selected="-1"
+      name="select"
+      class="form-control"
+      style="margin-top:10px;">
+      <option ng-repeat="x in availableArr" value="{{x.fname}}">{{x.fname}}</option>
+    </select>
+      <button ng-click="updateField($event)" style="margin-top:10px;" class="btn btn-primary">Update</button>
+    </p>
+  </div>
+  <br>
+  <div class='well'>
+    <p kParam="firstBase" style="font-weight:bold">First Base : {{firstBase}} <select
+      selected="-1"
+      name="select"
+      class="form-control"
+      style="margin-top:10px;">
+      <option ng-repeat="x in availableArr" value="{{x.fname}}">{{x.fname}}</option>
+    </select>
+      <button ng-click="updateField($event)" style="margin-top:10px;" class="btn btn-primary">Update</button>
+    </p>
+  </div>
+  <br>
+  <div class='well'>
+    <p kParam="catcher" style="font-weight:bold">catcher : {{catcher}} <select
+      selected="-1"
+      name="select"
+      class="form-control"
+      style="margin-top:10px;">
+      <option ng-repeat="x in availableArr" value="{{x.fname}}">{{x.fname}}</option>
+    </select>
+      <button ng-click="updateField($event)" style="margin-top:10px;" class="btn btn-primary">Update</button>
+    </p>
+  </div>
+
+  <br><br>
+  <h2>Batting Lineup</h2>
+  <hr>
+  <div class='well'>
+    <p style="font-weight:bold">#1</p>
+    <br>
+    <p style="font-weight:bold">{{_1}}</p>
+  </div>
+  <br>
+  <div class='well'>
+    <p style="font-weight:bold">#2</p>
+    <br>
+    <p style="font-weight:bold">{{_2}}</p>
+  </div>
+  <br>
+  <div class='well'>
+    <p style="font-weight:bold">#3</p>
+    <br>
+    <p style="font-weight:bold">{{_3}}</p>
+  </div>
+  <br>
+  <div class='well'>
+    <p style="font-weight:bold">#4</p>
+    <br>
+    <p style="font-weight:bold">{{_4}}</p>
+  </div>
+  <br>
+  <div class='well'>
+    <p style="font-weight:bold">#5</p>
+    <br>
+    <p style="font-weight:bold">{{_5}}</p>
+  </div>
+  <br>
+  <div class='well'>
+    <p style="font-weight:bold">#6</p>
+    <br>
+    <p style="font-weight:bold">{{_6}}</p>
+  </div>
+  <br>
+  <div class='well'>
+    <p style="font-weight:bold">#7</p>
+    <br>
+    <p style="font-weight:bold">{{_7}}</p>
+  </div>
+  <br>
+  <div class='well'>
+    <p style="font-weight:bold">#8</p>
+    <br>
+    <p style="font-weight:bold">{{_8}}</p>
+  </div>
+  <br>
+  <div class='well'>
+    <p style="font-weight:bold">#9</p>
+    <br>
+    <p style="font-weight:bold">{{_9}}</p>
+  </div>
+
+  <script>
+
+    $scope.canvasRender();
+
+  </script>
+</ion-view>
