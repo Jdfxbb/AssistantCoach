@@ -1,9 +1,9 @@
 
 
-<ion-view class="container" ng-controller="CoachMain-controller">
-  <h2 class="ViewHeading" style="color:blue;">Hello {{parentUserName}}</h2>
+<ion-view class="container" ng-controller="CoachMain-controller" style="background-image: url(img/field.jpg)">
+  <h2 style="color:green;">Hello {{parentUserName}}</h2>
 
-  <div class="panel panel-default" style="margin-top:20px; padding:5px; padding-bottom:25px; text-align:center;">
+  <div class="panel panel-default" style="margin-top:20px; padding:5px; padding-bottom:25px; text-align:center; background: green">
     <button class="btn btn-primary panelBtn" ng-click="assignTeamCoach()">Team</button>
     <button class="btn btn-success  panelBtn" ng-click="assignChatCoach()">Chat Room</button>
     <button class="btn btn-danger  panelBtn" ng-click="assignUpdateCoach()">Update Info</button>
