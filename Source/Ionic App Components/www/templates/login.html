@@ -1,21 +1,21 @@
 
 
-<ion-view class="container" ng-controller="Login-controller">
-<h2 class="ViewHeading" style="color:blue;">Login</h2>
+<ion-view class="container" style="background-image: url(img/field.jpg); color: white" ng-controller="Login-controller">
+<h2 style="background:green;">Login</h2>
 
     <div class="input-group rinput">
-  <span class="input-group-addon" id="fName">User Name</span>
-  <input type="text" id="username" class="form-control" ng-model="username" placeholder="User ID" aria-describedby="basic-addon1">
+  <span class="input-group-addon" id="fName" style="background: green; color: white">User Name</span>
+  <input type="text" id="username" class="form-control" ng-model="username" placeholder="User ID" aria-describedby="basic-addon1" style="background: white">
 </div>
 
     <div class="input-group rinput">
-  <span class="input-group-addon" id="lName">Password</span>
+  <span class="input-group-addon" id="lName"style="background: green; color: white">Password</span>
   <input id="password" type="password" class="form-control"  ng-model="password"  placeholder="Password" aria-describedby="basic-addon1">
 </div>
 
 <div style="margin-top:20px; padding:5px; text-align:center;">
   <button class="btn btn-primary" ng-click="submit()">Login</button>
-  <button class="btn btn-success" ng-click="signup()">SignUp</button>
+  <button class="btn btn-danger" ng-click="signup()">SignUp</button>
 <br><br><br>
 <well>Please Select Login Type</well>
 <select id="comboTypes" class="form-control" id="sel1">
