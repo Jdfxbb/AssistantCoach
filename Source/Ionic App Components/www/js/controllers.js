@@ -91,36 +91,6 @@ angular.module('assistantcoach',[])
       return copy;
     };
 
-    // fbdb.ref('team/field').on('value',function(snapshot){
-    //
-    //   fbdb.ref('players').once('value',function(playerSnapshot){
-    //     playersArr = playerSnapshot.val();
-    //
-    //     xarr = {};
-    //     $scope.availableArr = [];
-    //     fbdb.ref('team/field').once('value').then(function(snappy){
-    //       $.each(snappy.val(),function(key,value){
-    //         // console.log(typeof value);
-    //         // console.log(playersArr[value]);
-    //         if(playersArr[value]){
-    //           if(playersArr[value].fname == value){
-    //             xarr[value] = playersArr[value];
-    //           }
-    //         }
-    //       });
-    //
-    //       $.each(playersArr,function(i,obj){
-    //
-    //         if(xarr[obj.fname] == undefined){
-    //           $scope.availableArr.push(obj);
-    //         }
-    //       });
-    //     });
-    //   });
-    //   // console.log(typeof snapshot.val());
-    //   // console.log(playersArr);
-    // });
-
     fbdb.ref('players').on('value',function(snapshot){
       // console.log(typeof snapshot.val());
       playersArr = snapshot.val();
@@ -174,10 +144,12 @@ angular.module('assistantcoach',[])
 
     $scope.assignChat = function(){
         $scope.template = "templates/Chat.html";
+        $scope.$evalAsync();
     }
 
     $scope.assignLogin = function(){
         $scope.template = "templates/login.html";
+        $scope.$evalAsync();
     }
 
     $scope.assignUpdate = function(){
@@ -206,6 +178,7 @@ angular.module('assistantcoach',[])
 
     $scope.assignTeam = function(){
       $scope.template = "templates/TeamView.html";
+      $scope.$evalAsync();
     }
 
     $scope.assignTeamParent = function(){
@@ -266,6 +239,33 @@ angular.module('assistantcoach',[])
 })
 
 .controller('Login-controller',function($scope){
+
+    fbdb.ref('command').set('');
+    fbdb.ref('command').on('value',function(snapshot){
+
+        if($scope.combo == "Coach"){
+            switch(snapshot.val()){
+                case 'chat':
+                    $scope.assignChat();
+                    $scope.$evalAsync();
+                    console.log('chat');
+                    fbdb.ref('command').set('');
+                    break;
+                case 'team':
+                    $scope.assignTeam();
+                    $scope.$evalAsync();
+                    console.log('team');
+                    fbdb.ref('command').set('');
+                    break;
+                case 'main':
+                    $scope.assignLogin();
+                    $scope.$evalAsync();
+                    console.log('team');
+                    fbdb.ref('command').set('');
+                    break;
+            }
+        }
+    });
 
     $scope.signup = function(){
         $scope.combo = $('#comboTypes').val();
@@ -339,7 +339,7 @@ angular.module('assistantcoach',[])
               if(snapshot.val().password == $scope.password){
 
                 $scope.assignCoachMain();
-                $scope.parentUserName = $scope.assignUserName($scope.username);
+                $scope.parentUserName = $scope.assignUserName("Coach");
                 $scope.$evalAsync();
               }
               else
@@ -364,7 +364,6 @@ angular.module('assistantcoach',[])
 
 
   })
-
 
   .controller('CoachMain-controller',function($scope){
 
@@ -656,7 +655,6 @@ angular.module('assistantcoach',[])
     }
   })
 
-
   .controller('CoachRegister-controller',function($scope){
 
     $scope.submit = function (){
@@ -722,8 +720,8 @@ angular.module('assistantcoach',[])
 
   $scope.send = function(){
 
-    $scope.parentUserName = 'bilal';
-
+        $scope.$evalAsync();
+        console.log($scope.parentUserName);
     var date = new Date();
     var xdate = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes();
 

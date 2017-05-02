@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="service:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="service.war">
+      <element id="artifact" artifact-name="service:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="firebase-app" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

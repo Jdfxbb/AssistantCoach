@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="firebase-app">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../firebase-app/out/artifacts/firebase_app_jar/firebase-app.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
